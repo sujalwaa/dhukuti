@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 import '../screens/add_transaction/add_tab.dart';
+import '../screens/overview/overview_tab.dart';
+import '../screens/analytics/analytics_tab.dart';
+import '../screens/savings/savings_tab.dart';
+import '../screens/settings/settings_page.dart';
+
 
 class AppShell extends ConsumerStatefulWidget {
   const AppShell({super.key});

@@ -37,7 +37,15 @@ class _AppShellState extends ConsumerState<AppShell> {
     }
 
     return Scaffold(
-      body: Center(child: Text('Tab $_currentIndex')),
+      body: IndexedStack(
+        index: _currentIndex > 2 ? _currentIndex - 1 : _currentIndex,
+        children: const [
+          OverviewTab(),
+          AnalyticsTab(),
+          SavingsTab(),
+          SettingsPage(),
+        ],
+      ),
       bottomNavigationBar: Container(
         decoration: const BoxDecoration(
           color: Color.fromRGBO(255, 255, 255, 0.94),

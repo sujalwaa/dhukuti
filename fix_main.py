@@ -1,4 +1,9 @@
-import 'package:flutter/material.dart';
+import re
+
+with open('lib/main.dart', 'r') as f:
+    content = f.read()
+
+repl = """import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'core/config/supabase_config.dart';
@@ -75,3 +80,7 @@ class DhukutiApp extends ConsumerWidget {
     }
   }
 }
+"""
+
+with open('lib/main.dart', 'w') as f:
+    f.write(repl)

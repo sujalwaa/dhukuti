@@ -74,7 +74,7 @@ class AuthNotifier extends StateNotifier<AuthState> {
   Future<void> signInWithGoogle() async {
     state = const AuthLoading();
     try {
-      // Implement specific Google auth logic
+      await _supabase.auth.signInWithOAuth(OAuthProvider.google);
     } catch (e) {
       state = const AuthUnauthenticated();
       rethrow;
@@ -84,7 +84,7 @@ class AuthNotifier extends StateNotifier<AuthState> {
   Future<void> signInWithApple() async {
     state = const AuthLoading();
     try {
-      // Implement specific Apple auth logic
+      await _supabase.auth.signInWithOAuth(OAuthProvider.apple);
     } catch (e) {
       state = const AuthUnauthenticated();
       rethrow;

@@ -90,7 +90,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 ),
                 icon: Icon(PhosphorIcons.appleLogo()),
                 label: const Text('Sign in with Apple'),
-                onPressed: () {},
+                onPressed: () => ref.read(authProvider.notifier).signInWithApple(),
               ),
               const SizedBox(height: 16),
               OutlinedButton.icon(
@@ -101,7 +101,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                 ),
                 icon: Icon(PhosphorIcons.googleLogo()),
                 label: const Text('Sign in with Google'),
-                onPressed: () {},
+                onPressed: () => ref.read(authProvider.notifier).signInWithGoogle(),
               ),
               const Spacer(),
               Row(
